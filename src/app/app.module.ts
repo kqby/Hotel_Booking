@@ -7,12 +7,14 @@ import { NavmenuComponent } from './navmenu/navmenu.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
-import { BookingComponent } from './booking/booking.component';
-import { DateComponent } from './booking/date/date.component';
-import { CommentsComponent } from './booking/comments/comments.component';
-import { RoomsComponent } from './booking/rooms/rooms.component';
-import { PropertiesComponent } from './booking/properties/properties.component';
+import { BookingComponent } from './hotels/booking/booking.component';
+import { DateComponent } from './hotels/booking/date/date.component';
+import { CommentsComponent } from './hotels/booking/comments/comments.component';
+import { RoomsComponent } from './hotels/booking/rooms/rooms.component';
+import { PropertiesComponent } from './hotels/booking/properties/properties.component';
 import { HotelsComponent } from './hotels/hotels.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { HotelsComponent } from './hotels/hotels.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

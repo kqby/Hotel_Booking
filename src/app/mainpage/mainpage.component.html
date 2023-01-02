@@ -1,1 +1,22 @@
-<p>mainpage works!</p>
+<div class="bg-image"
+     style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+            height: 100vh">
+
+<div class="carouselCont">
+<ngb-carousel
+  #carousel
+  [interval]="2500"
+>
+  <ng-template ngbSlide *ngFor="let img of images; index as i">
+    <div class="carousel-caption">
+    </div>
+    <a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
+      <div class="picsum-img-wrapper">
+        <img [src]="img" alt="My image {{i + 1}} description" />
+      </div>
+    </a>
+  </ng-template>
+</ngb-carousel>
+</div>
+
+</div>

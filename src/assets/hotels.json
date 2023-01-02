@@ -1,0 +1,22 @@
+{
+  "honey01": {
+    "name": "Para Panzio",
+    "address": "Kossuth Lsgt 71",
+    "picture": "honey01.jpg"
+  },
+  "honey02":{
+    "name": "Para Panzio",
+    "address": "Kossuth Lsgt 71",
+    "picture": "honey02.jpg"
+  },
+  "hegy03": {
+    "name": "Para Panzio",
+    "address": "Kossuth Lsgt 71",
+    "picture": "honey03.jpg"
+  },
+  "hegy01": {
+    "name": "Para Panzio",
+    "address": "Kossuth Lsgt 71",
+    "picture": "hegy01.jpg"
+  }
+}
