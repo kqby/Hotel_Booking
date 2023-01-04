@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {HotelObject} from "../shared/data";
 
 @Component({
   selector: 'app-hotels',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class HotelsComponent implements OnInit {
 
   constructor() { }
+
+  hotelObejct = HotelObject;
 
   ngOnInit(): void {
   }

@@ -1,0 +1,34 @@
+.box{
+
+  margin: 25px;
+  display: block;
+  border: 15px #ff0048;
+  background: #a6e0ff;
+  padding: .5em;
+}
+.text{
+  margin: 5px;
+  text-align: center;
+  font-size: 12px;
+  white-space: pre;
+}
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+
+}
+.galleryImage{
+  width: 45%;
+  height: auto;
+  margin: 15px;
+
+}
+.nev{
+  margin: 15px;
+  font-size: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

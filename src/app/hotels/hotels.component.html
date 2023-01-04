@@ -1,1 +1,20 @@
-<app-booking></app-booking>
+<ng-container *ngFor="let hotel of hotelObejct">
+<div class="container my-2">
+  <div class="row my-1">
+    <div class="col-4">
+      <div class="card" style="width: 50rem;">
+        <img src="assets/{{hotel.picture}}" class="galleryImage" alt="{{hotel.name}}" >
+
+        <div class="card-body  border-5 border-dark">
+          <h1 class="card-title">{{hotel.name}}</h1>
+          <p class="card-text">{{hotel.description}}</p>
+          <a  routerLink="hotel" class="btn btn-primary">Foglalj Most!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</ng-container>
+
+
+
