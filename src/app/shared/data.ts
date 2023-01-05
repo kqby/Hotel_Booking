@@ -1,6 +1,6 @@
 export  const HotelObject = [{
 
-  'id':   'honey01',
+  'id':   '1',
   'name': 'Para Panzio',
   'address': 'Kossuth Lsgt 71',
   'picture':'honey01.jpg',
@@ -9,7 +9,7 @@ export  const HotelObject = [{
 
 },
   {
-    'id':   'honey02',
+    'id':   '2',
     'name': 'Para Panzio',
     'address': 'Kossuth Lsgt 71',
     'picture':'honey02.jpg',
@@ -17,7 +17,7 @@ export  const HotelObject = [{
 
   },
   {
-    'id':   'h5',
+    'id':   '3',
     'name': 'Para Panzio',
     'address': 'Kossuth Lsgt 71',
     'picture':'h5.jpg',
@@ -26,7 +26,7 @@ export  const HotelObject = [{
 
   },
   {
-    'id':   'hegy01',
+    'id':   '4',
     'name': 'Para Panzio',
     'address': 'Kossuth Lsgt 71',
     'picture':'hegy01.jpg',

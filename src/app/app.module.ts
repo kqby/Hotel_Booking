@@ -15,6 +15,10 @@ import { PropertiesComponent } from './hotels/booking/properties/properties.comp
 import { HotelsComponent } from './hotels/hotels.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from "@angular/forms";
+import { GalleryComponent } from './hotels/booking/gallery/gallery.component';
+import {NgImageSliderModule} from "ng-image-slider";
+import {HelloComponent} from "./hotels/booking/gallery/hello.component";
+
 
 @NgModule({
   declarations: [
@@ -28,13 +32,16 @@ import {FormsModule} from "@angular/forms";
     CommentsComponent,
     RoomsComponent,
     PropertiesComponent,
-    HotelsComponent
+    HotelsComponent,
+    GalleryComponent,
+    HelloComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    NgImageSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

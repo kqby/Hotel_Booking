@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HotelObject} from "../shared/data";
+import {Hotel} from "./hotels.model.js";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-hotels',
@@ -8,11 +10,16 @@ import {HotelObject} from "../shared/data";
 })
 export class HotelsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private  router:Router) { }
+  model:Array<Hotel> | any
   hotelObejct = HotelObject;
 
   ngOnInit(): void {
+    this.model =HotelObject
+  }
+
+  public  onClick(hotel:Hotel):void{
+    this.router.navigate(['hotel',hotel.id])
   }
 
 }
