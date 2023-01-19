@@ -3,6 +3,8 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 
 
 import { NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
+import {HotelService} from "../hotels/hotel.service";
+import {Hotel} from "../shared/hotels.model";
 
 @Component({
   selector: 'app-mainpage',
@@ -11,7 +13,8 @@ import { NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
 })
 export class MainpageComponent implements OnInit {
 
-  constructor() {
+  hotels:Hotel[] = []
+  constructor( public  hotelService:HotelService) {
   }
   images = ["../assets/h5.jpg","../assets/h8.jpg","../assets/honey01.jpg"];
 
@@ -21,6 +24,8 @@ export class MainpageComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.hotelService.getHotels()
+
   }
 
 }

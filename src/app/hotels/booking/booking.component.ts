@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {Hotel} from "../hotels.model.js";
+import {Component,  OnInit} from '@angular/core';
+import {Hotel} from "../../shared/hotels.model.js";
 import {ActivatedRoute} from "@angular/router";
-import {Hotels} from "../hotels.storage";
+import {HotelService} from "../hotel.service";
+
 
 @Component({
   selector: 'app-booking',
@@ -9,16 +10,22 @@ import {Hotels} from "../hotels.storage";
   styleUrls: ['./booking.component.css']
 })
 export class BookingComponent implements OnInit {
-  model: any | Hotel
-  constructor(private activeedRoot:ActivatedRoute) {
 
-  }
+
+  id: string | null
+  hotel:Hotel
+
+  constructor(private activeedRoot:ActivatedRoute,private  hotelService:HotelService) {}
+
 
   ngOnInit(): void {
-    // @ts-ignore
-    const id  = +this.activeedRoot.snapshot.paramMap.get('id');
-    if ( id){
-      this.model = Hotels.filter(x => x.id  == id )[0];
-  }
 
-}}
+          this.id  = this.activeedRoot.snapshot.paramMap.get('id');
+          // @ts-ignore
+      this.hotel = this.hotelService.getHotel(this.id).subscribe((hotelData) => {
+      this.hotel = hotelData.hotels;
+      console.log(this.hotel)
+
+    }
+    )
+  }}

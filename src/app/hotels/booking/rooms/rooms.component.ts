@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Hotel} from "../../../shared/hotels.model.js";
+
+import {ActivatedRoute} from "@angular/router";
+import {HotelService} from "../../hotel.service";
 
 @Component({
   selector: 'app-rooms',
@@ -6,11 +10,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rooms.component.css']
 })
 export class RoomsComponent implements OnInit {
+  id: string | null
+  hotel:Hotel
 
-   numbers = [1,2,3,4,5,6,7,8,9,10]
-  constructor() { }
+  constructor(private activeedRoot:ActivatedRoute,private  hotelService:HotelService) {}
+
 
   ngOnInit(): void {
-  }
 
+    this.id  = this.activeedRoot.snapshot.paramMap.get('id');
+    this.hotelService.getHotel(this.id).subscribe((hotelData) => {
+        this.hotel = hotelData.hotels;
+          console.log(this.hotel)
+      }
+    )
+  }
 }

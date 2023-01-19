@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {HotelObject} from "../shared/data";
-import {Hotel} from "./hotels.model.js";
+import {Component, OnInit} from '@angular/core';
+
+import {Hotel} from "../shared/hotels.model.js";
 import {Router} from "@angular/router";
+import {HotelService} from "./hotel.service";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-hotels',
@@ -9,17 +11,25 @@ import {Router} from "@angular/router";
   styleUrls: ['./hotels.component.css']
 })
 export class HotelsComponent implements OnInit {
+  private HotelSub:Subscription
+  hotels:Hotel[]
+  _id:string
 
-  constructor(private  router:Router) { }
-  model:Array<Hotel> | any
-  hotelObejct = HotelObject;
+  constructor(private  router:Router,public  hotelService:HotelService) { }
 
   ngOnInit(): void {
-    this.model =HotelObject
+    this.hotelService.getHotels()
+    this.HotelSub = this.hotelService.getHotelUpdatedListener()
+      .subscribe((hotels: Hotel[] ) =>{
+        this.hotels = hotels
+      })
   }
 
-  public  onClick(hotel:Hotel):void{
-    this.router.navigate(['hotel',hotel.id])
+
+
+  public onClick(hotelid: string):void{
+    this._id = hotelid
+     this.router.navigate(['hotel/',hotelid])
   }
 
 }

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Hotel} from "../../../shared/hotels.model.js";
+
+import {ActivatedRoute} from "@angular/router";
+import {HotelService} from "../../hotel.service";
 
 @Component({
   selector: 'app-gallery',
@@ -6,11 +10,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gallery.component.css']
 })
 export class GalleryComponent implements OnInit {
+  id: string | null
+  hotel:Hotel
 
-  constructor() { }
+  constructor(private activeedRoot:ActivatedRoute,private  hotelService:HotelService) {}
 
-  name = 'Angular';
-  imageObject = [{
+
+  ngOnInit(): void {
+
+    this.id  = this.activeedRoot.snapshot.paramMap.get('id');
+    this.hotelService.getHotel(this.id).subscribe((hotelData) => {
+        this.hotel = hotelData.hotels;
+
+      }
+    )
+  }
+
+
+  imageObject  = [{
     image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/5.jpg',
     thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/5.jpg',
     title: 'Hummingbirds are amazing creatures'
@@ -33,7 +50,4 @@ export class GalleryComponent implements OnInit {
     thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/2.jpg',
     title: 'Example two with title.'
   }];
-  ngOnInit(): void {
-  }
-
 }

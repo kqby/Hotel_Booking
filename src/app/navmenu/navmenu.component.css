@@ -1,3 +1,7 @@
-.navbar-custom {
-  background-color:darkturquoise;
+.spacer{
+  flex: 1 1 auto;
+}
+
+.save-button {
+  background: green;
 }
