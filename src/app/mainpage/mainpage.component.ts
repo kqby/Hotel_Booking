@@ -3,7 +3,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 
 
 import { NgbCarousel} from '@ng-bootstrap/ng-bootstrap';
-import {HotelService} from "../hotels/hotel.service";
+import {HotelService} from "../services/hotel.service";
 import {Hotel} from "../shared/hotels.model";
 
 @Component({

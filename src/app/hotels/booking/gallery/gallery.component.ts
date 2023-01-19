@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Hotel} from "../../../shared/hotels.model.js";
 
 import {ActivatedRoute} from "@angular/router";
-import {HotelService} from "../../hotel.service";
+import {HotelService} from "../../../services/hotel.service";
 
 @Component({
   selector: 'app-gallery',
@@ -28,26 +28,30 @@ export class GalleryComponent implements OnInit {
 
 
   imageObject  = [{
-    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/5.jpg',
-    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/5.jpg',
+
+    image: 'assets/hegy01.jpg',
+    thumbImage: 'assets/hegy01.jpg',
     title: 'Hummingbirds are amazing creatures'
   }, {
-    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/9.jpg',
-    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/9.jpg'
+
+    image: 'assets/h5.jpg',
+    thumbImage: 'assets/h5.jpg',
   }, {
-    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/4.jpg',
-    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/4.jpg',
+
+    image: 'assets/vszoba1.jpg',
+    thumbImage: 'assets/vszoba1.jpg',
     title: 'Example with title.'
   },{
-    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/7.jpg',
-    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/7.jpg',
+
+    image: 'assets/honey04.jpg',
+    thumbImage: 'assets/honey04.jpg',
     title: 'Hummingbirds are amazing creatures'
   }, {
-    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/1.jpg',
-    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/1.jpg'
+    image: 'assets/honey02.jpg',
+    thumbImage: 'assets/honey02.jpg'
   }, {
-    image: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/2.jpg',
-    thumbImage: 'https://sanjayv.github.io/ng-image-slider/contents/assets/img/slider/2.jpg',
+    image: 'assets/h10.jpg',
+    thumbImage: 'assets/h10.jpg',
     title: 'Example two with title.'
   }];
 }

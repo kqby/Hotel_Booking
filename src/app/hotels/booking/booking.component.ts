@@ -1,7 +1,7 @@
 import {Component,  OnInit} from '@angular/core';
 import {Hotel} from "../../shared/hotels.model.js";
 import {ActivatedRoute} from "@angular/router";
-import {HotelService} from "../hotel.service";
+import {HotelService} from "../../services/hotel.service";
 
 
 @Component({

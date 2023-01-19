@@ -3,20 +3,16 @@ export interface Hotel{
   name:string;
   address:string;
   picture:string;
-  description:string
-  pricing:number
-  /*images?:[
-    {
-      img0?:string
-      1?:string;
-      2?:string
-      3?:string;
-      4?:string
-      5?:string;
-      6?:string
+  description:string;
+  pricing:number;
+  accommodation:number,
+  properties:[
+    properties1:string,
+    properties2:string,
+  ]
 
-    }
-  ]*/
+
+
 
 
 }
