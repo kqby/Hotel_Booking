@@ -4,6 +4,9 @@ import {ActivatedRoute} from "@angular/router";
 import {HotelService} from "../../services/hotel.service";
 
 
+
+
+
 @Component({
   selector: 'app-booking',
   templateUrl: './booking.component.html',

@@ -4,6 +4,7 @@ import {Hotel} from "../../../shared/hotels.model.js";
 import {ActivatedRoute} from "@angular/router";
 import {HotelService} from "../../../services/hotel.service";
 
+
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
@@ -13,7 +14,11 @@ export class GalleryComponent implements OnInit {
   id: string | null
   hotel:Hotel
 
+
+
+
   constructor(private activeedRoot:ActivatedRoute,private  hotelService:HotelService) {}
+
 
 
   ngOnInit(): void {
@@ -28,6 +33,7 @@ export class GalleryComponent implements OnInit {
 
 
   imageObject  = [{
+
 
     image: 'assets/hegy01.jpg',
     thumbImage: 'assets/hegy01.jpg',
@@ -52,6 +58,6 @@ export class GalleryComponent implements OnInit {
   }, {
     image: 'assets/h10.jpg',
     thumbImage: 'assets/h10.jpg',
-    title: 'Example two with title.'
-  }];
+  }
+   ]
 }

@@ -12,7 +12,4 @@ export interface Hotel{
   ]
 
 
-
-
-
 }

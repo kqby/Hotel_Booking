@@ -2,8 +2,9 @@ import {Component, OnInit} from '@angular/core';
 
 import {Hotel} from "../shared/hotels.model.js";
 import {Router} from "@angular/router";
-import {HotelService} from "../services/hotel.service";
+
 import {Subscription} from "rxjs";
+import {HotelService} from "../services/hotel.service";
 
 @Component({
   selector: 'app-hotels',
