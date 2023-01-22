@@ -8,12 +8,9 @@ import {AuthService} from "../auth.service";
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-  isLoading: false;
-
+  isLoading = false;
 
   constructor(public authService:AuthService) { }
-
-
 
   ngOnInit(): void {
   }
@@ -23,6 +20,7 @@ export class SigninComponent implements OnInit {
     if(signupForm.invalid){
       return
     }
+    this.isLoading = true
     this.authService.createUser(signupForm.value.email,signupForm.value.password)
 
     console.log(signupForm.value)

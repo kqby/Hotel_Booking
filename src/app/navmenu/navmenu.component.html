@@ -5,8 +5,13 @@
   <a mat-button  routerLink="mainpage"><mat-icon>hotel_class</mat-icon> Hotel</a>
   <a mat-button  routerLink="booking"><mat-icon>hotel</mat-icon>Foglalás</a>
 
-  <a mat-button routerLink="signin"><mat-icon>edit</mat-icon>Regisztráció</a>
-  <a mat-raised-button color="accent" routerLink="login"><mat-icon>login</mat-icon>login</a>
+  <a *ngIf="!userIsAthenticated" mat-button routerLink="signin"><mat-icon>edit</mat-icon>Regisztráció</a>
+  <a  *ngIf="!userIsAthenticated" mat-raised-button color="accent" routerLink="login"><mat-icon>login</mat-icon>login</a>
+    <button  *ngIf="userIsAthenticated" (click)="onLogout()" mat-raised-button color="accent" ><mat-icon>logout</mat-icon>Logout</button>
+
+
+
+
   </div>
 </mat-toolbar>
 

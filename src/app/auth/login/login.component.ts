@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
     if(loginform.invalid){
       return
     }
+    this.isLoading = true
     this.authService.login(loginform.value.email,loginform.value.password)
 
 

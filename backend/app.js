@@ -34,7 +34,7 @@ app.use((req,res,next) =>{
 
 
 
-app.post('/api/hotels',(req ,res,next) => {
+/*app.post('/api/hotels',(req ,res,next) => {
   const hotel  = new Hotel({
     id: req.body.id,
     name: req.body.name,
@@ -45,7 +45,7 @@ app.post('/api/hotels',(req ,res,next) => {
     accommodation:req.body.accommodation,
     properties:req.body.properties
 
-  });
+
 
   console.log("siker")
   console.log(hotel)
@@ -54,7 +54,7 @@ app.post('/api/hotels',(req ,res,next) => {
     hotels:hotel
   });
 })
-
+  });*/
 
 
 app.get('/api/hotels', (req,res,next) => {

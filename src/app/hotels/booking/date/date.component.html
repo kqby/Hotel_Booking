@@ -35,14 +35,16 @@
   <mat-label>Choose Date Range</mat-label>
   <mat-date-range-input [rangePicker]="picker" [formGroup]="dateRange">
     <input matStartDate formControlName="start" [(ngModel)]="startDate" placeholder="Start Date">
-    <input matEndDate formControlName="end"  [(ngModel)]="endDate "placeholder="End Date">
+    <input matEndDate formControlName="end"  [(ngModel)]="endDate "    placeholder="End Date">
   </mat-date-range-input>
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-date-range-picker #picker></mat-date-range-picker>
 </mat-form-field>
 <h2>
   Start: {{dateRange.value.start | date}}
+  <br>
   End: {{dateRange.value.end | date}}
 </h2>
-<button (click)="calculateDays()">Foglalás</button>
-<h3>number of days   </h3>
+<button (click)="calculateDays()">Ár</button>
+<button (click)="reservation() " *ngIf="userAuthenticated">Foglalás</button>
+<h3>Ár:  {{days * hotel.pricing}} € </h3>

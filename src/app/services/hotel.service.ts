@@ -11,10 +11,12 @@ import { Subject} from "rxjs";
 export class HotelService {
 
   private _geturl = "http://localhost:3000/api/hotels"
+
   hotelegydarab :Hotel
   hotels : Hotel[] = []
   id:string
   hotelsUpdated = new Subject<Hotel[]>()
+
   constructor(private http:HttpClient,) { }
 
 
