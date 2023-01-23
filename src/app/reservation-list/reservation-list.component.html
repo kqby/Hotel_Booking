@@ -1,0 +1,51 @@
+<div class="container">
+ <div class="row">
+   <div class="col">
+     <h1>Foglalási Lista</h1>
+   </div>
+ </div>
+  <div class="row">
+    <div class="col">
+      Foglalás kezdete
+      <div class="row">
+      </div>
+    </div>
+    <div class="col">
+     Foglalás vége
+    </div>
+    <div class="col">
+      Ár
+    </div>
+    <div class="col">
+      Foglalás ID
+    </div>
+    <div class="col">
+
+    </div>
+
+    <ng-container *ngFor="let reservation of reservation">
+  <div class="row">
+    <div class="col">
+      {{reservation.startDate |date: 'dd/MM/yyyy'}}
+      <div class="row">
+      </div>
+    </div>
+    <div class="col">
+     {{reservation.endDate |date: 'dd/MM/yyyy'}}
+    </div>
+    <div class="col">
+
+    </div>
+    <div class="col">
+      {{reservation.id}}
+    </div>
+    <div class="col">
+      <button   (click)="onDelet(reservation.id)"  mat-raised-button color="warn" >Törlés</button>
+    </div>
+
+
+  </div>
+
+  </ng-container>
+</div>
+</div>

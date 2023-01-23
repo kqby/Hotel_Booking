@@ -33,7 +33,7 @@
 <h2>Angular Date Range Picker Demo</h2>
 <mat-form-field (submit)="calculateDays()">
   <mat-label>Choose Date Range</mat-label>
-  <mat-date-range-input [rangePicker]="picker" [formGroup]="dateRange">
+  <mat-date-range-input [rangePicker]="picker" [formGroup]="dateRange" [min]="minDate" >
     <input matStartDate formControlName="start" [(ngModel)]="startDate" placeholder="Start Date">
     <input matEndDate formControlName="end"  [(ngModel)]="endDate "    placeholder="End Date">
   </mat-date-range-input>
@@ -46,5 +46,5 @@
   End: {{dateRange.value.end | date}}
 </h2>
 <button (click)="calculateDays()">Ár</button>
-<button (click)="reservation() " *ngIf="userAuthenticated">Foglalás</button>
+<button (click)="reservation(hotel._id,dateRange.value.start,dateRange.value.end,email) " *ngIf="userAuthenticated">Foglalás</button>
 <h3>Ár:  {{days * hotel.pricing}} € </h3>

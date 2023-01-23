@@ -7,6 +7,8 @@
 
   <a *ngIf="!userIsAthenticated" mat-button routerLink="signin"><mat-icon>edit</mat-icon>Regisztráció</a>
   <a  *ngIf="!userIsAthenticated" mat-raised-button color="accent" routerLink="login"><mat-icon>login</mat-icon>login</a>
+  <a  *ngIf="userIsAthenticated"  mat-button routerLink="reservation-list"><mat-icon>event_availabel</mat-icon>Foglalásaim</a>
+
     <button  *ngIf="userIsAthenticated" (click)="onLogout()" mat-raised-button color="accent" ><mat-icon>logout</mat-icon>Logout</button>
 
 

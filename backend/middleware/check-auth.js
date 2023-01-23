@@ -4,8 +4,9 @@ module.exports = (req, res, next) =>{
   try {
 
     const token = req.headers.authorization.split(" ")[1];
-    jwt.verify(token, "secret_This_should_be_longer_MORE");
-    next()
+    const decodedToken =  jwt.verify(token, "secret_This_should_be_longer_MORE");
+    req.userData = {email:decodedToken.email,userId:decodedToken.userId}
+    next();
   } catch (error){
     res.status(401).json({
       message:'Auth failed'

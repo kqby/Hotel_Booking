@@ -5,9 +5,11 @@ const Hotel = require('./models/hotel')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 
+
+const Reservation = require("./models/reservation")
 const checkAuth =require("./middleware/check-auth")
 const userRoutes = require("./user")
-
+const router = express.Router();
 
 //0JFCxqoAXu8HnEdQ
 mongoose
@@ -34,28 +36,6 @@ app.use((req,res,next) =>{
 
 
 
-/*app.post('/api/hotels',(req ,res,next) => {
-  const hotel  = new Hotel({
-    id: req.body.id,
-    name: req.body.name,
-    address:req.body.address,
-    picture:req.body.picture,
-    description:req.body.description,
-    pricing:req.body.pricing,
-    accommodation:req.body.accommodation,
-    properties:req.body.properties
-
-
-
-  console.log("siker")
-  console.log(hotel)
-  res.status(201).json({
-    message:'Hotel addded ',
-    hotels:hotel
-  });
-})
-  });*/
-
 
 app.get('/api/hotels', (req,res,next) => {
 
@@ -64,6 +44,18 @@ app.get('/api/hotels', (req,res,next) => {
       res.status(200).json({
         message:'nem hiszem ,hoy jó',
         hotels:document
+      })
+    });
+
+
+})
+app.get('/api/reservation-list',checkAuth ,(req,res,next) => {
+
+  Reservation.find({creator:req.userData.userId})
+    .then(document => {
+      res.status(200).json({
+        message:'foglalási időpontok',
+        reservations:document
       })
     });
 
@@ -79,6 +71,42 @@ app.get('/api/hotels/:id', (req,res,next) => {
         hotels:document
       })
     });
+
+})
+app.get('/api/reservation-list/:id', (req,res,next) => {
+
+  Reservation.findById(req.params.id)
+    .then(document => {
+      res.status(200).json({
+        message:'nem hiszem ,hoy jó',
+        reservation:document
+      })
+    });
+
+})
+
+app.post('/api/reservation',checkAuth,(req,res,next ) =>{
+  const booking = new Reservation({
+    id: req.body.id,
+    startDate:req.body.startDate,
+    endDate:req.body.endDate,
+    email:req.body.email,
+    creator:req.userData.userId
+  });
+  booking.save().then( result =>{
+    res.status(201).json({
+      message:'Reservation  added succcesfully',
+      reservationId:result.id
+    });
+  });
+  })
+
+app.delete('/:id',checkAuth,(req,res,next) => {
+
+  Reservation.deleteOne({id:req.params._id,creator:req.userData.userId}).then(result =>{
+  console.log(result)
+    res.status(200).json({message:'Reservation Deleted'})
+  })
 
 })
 

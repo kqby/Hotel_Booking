@@ -5,6 +5,7 @@ import {ActivatedRoute} from "@angular/router";
 import {HotelService} from "../../../services/hotel.service";
 import {AuthService} from "../../../auth/auth.service";
 import {Subscription} from "rxjs";
+import {HttpClient} from "@angular/common/http";
 
 
 
@@ -18,16 +19,22 @@ export class DateComponent implements OnInit,OnChanges,OnDestroy {
   id: string | null
   hotel:Hotel
 
+  email = this.authService.getEmail()
   private authStatusSub: Subscription
    userAuthenticated
 
-  constructor(private activeedRoot:ActivatedRoute,private hotelService:HotelService,public  authService:AuthService) { }
+  constructor(
+    private activeedRoot:ActivatedRoute,
+    private hotelService:HotelService,
+    public  authService:AuthService,
+    public  http:HttpClient
+  ) { }
 
   dateRange = new FormGroup({
     start: new FormControl(),
     end: new FormControl()
   });
-  days : number | any
+  days : number
   startDate = new Date()
   endDate = new Date()
   minDate= new Date();
@@ -46,7 +53,6 @@ export class DateComponent implements OnInit,OnChanges,OnDestroy {
   }
 
 
-
   ngOnInit(): void {
 
     this.id  = this.activeedRoot.snapshot.paramMap.get('id');
@@ -61,13 +67,16 @@ export class DateComponent implements OnInit,OnChanges,OnDestroy {
    })
   }
 
-  reservation() {
-
-    console.log(this.hotel._id)
-    console.log(this.startDate)
-    console.log(this.endDate)
+  reservation(id:string,startDate:Date,endDate:Date,email:String){
+      this.hotelService.reservationPost(id,startDate,endDate,email)
 
   }
+
+
+
+
+
+
   ngOnDestroy() {
     this.authStatusSub.unsubscribe()
   }

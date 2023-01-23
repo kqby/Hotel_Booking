@@ -32,6 +32,7 @@ import {MatCardModule} from "@angular/material/card";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {AuthInterceptor} from "./auth/auth-interceptor";
+import { ReservationListComponent } from './reservation-list/reservation-list.component';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import {AuthInterceptor} from "./auth/auth-interceptor";
     PropertiesComponent,
     HotelsComponent,
     GalleryComponent,
+    ReservationListComponent,
 
   ],
   imports: [

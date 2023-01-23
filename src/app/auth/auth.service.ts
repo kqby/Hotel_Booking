@@ -9,6 +9,7 @@ import  {Router} from '@angular/router'
 })
 export class AuthService {
 
+  email =''
     private  tokenTimer:any
   isAuthenticated = false
   private token : string | null;
@@ -23,6 +24,10 @@ export class AuthService {
 
   getToken(){
     return this.token
+  }
+  getEmail(){
+    return this.email
+    console.log(this.email)
   }
 
   getAuthStatusListener(){
@@ -42,8 +47,10 @@ export class AuthService {
     }>("http://localhost:3000/api/user/login",authData)
       .subscribe(response => {
 
+        this.email = email
         const token = response.token;
         this.token  = token;
+
 
         if(token){
 

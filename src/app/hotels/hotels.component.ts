@@ -5,6 +5,7 @@ import {Router} from "@angular/router";
 
 import {Subscription} from "rxjs";
 import {HotelService} from "../services/hotel.service";
+import {Reservation} from "../shared/reservation.model";
 
 @Component({
   selector: 'app-hotels',
@@ -13,6 +14,7 @@ import {HotelService} from "../services/hotel.service";
 })
 export class HotelsComponent implements OnInit {
   private HotelSub:Subscription
+
   hotels:Hotel[]
   _id:string
 
@@ -24,6 +26,8 @@ export class HotelsComponent implements OnInit {
       .subscribe((hotels: Hotel[] ) =>{
         this.hotels = hotels
       })
+
+
   }
 
 
